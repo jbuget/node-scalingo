@@ -1,0 +1,28 @@
+{
+  "name": "scalingo",
+  "version": "0.0.1",
+  "description": "Node client for Scalingo API",
+  "keywords": [
+    "Scalingo",
+    "Node"
+  ],
+  "author": "Jérémy Buget",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jbuget/node-scalingo/issues"
+  },
+  "homepage": "https://github.com/jbuget/node-scalingo#readme",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbuget/node-scalingo.git"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.0",
+    "typescript": "^3.7.5"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
