@@ -1,12 +1,7 @@
 import ScalingoClient from '../ScalingoClient';
+import Service from './Service';
 
-export default class VariablesService {
-
-  private readonly client: ScalingoClient;
-
-  constructor(scalingoClient: ScalingoClient) {
-    this.client = scalingoClient;
-  }
+export default class VariablesService  extends Service {
 
   async listEnvironmentVariables(appName: string) {
     const uri = `apps/${appName}/variables`;

@@ -1,12 +1,6 @@
-import ScalingoClient from '../ScalingoClient';
+import Service from './Service';
 
-export default class AppsService {
-
-  private readonly client: ScalingoClient;
-
-  constructor(scalingoClient: ScalingoClient) {
-    this.client = scalingoClient;
-  }
+export default class AppsService extends Service {
 
   async createApplication(appName: string, appGitSource?: string, appStackId?: string, dryRun: boolean = false) {
     const uri = 'apps';
