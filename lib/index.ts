@@ -1,3 +1,3 @@
-import ScalingoApi from './ScalingoApi';
+import { ScalingoApi } from './ScalingoApi';
 
-export default ScalingoApi;
+export { ScalingoApi };
