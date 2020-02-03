@@ -47,7 +47,6 @@
     "release:patch": "npm version patch && npm publish"
   },
   "dependencies": {
-    "@types/moment": "^2.13.0",
     "moment": "^2.24.0"
   }
 }
