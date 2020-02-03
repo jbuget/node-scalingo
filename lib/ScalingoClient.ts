@@ -1,4 +1,4 @@
-import axios, {AxiosInstance, Method} from 'axios';
+import axios, {AxiosInstance, AxiosResponse, Method} from 'axios';
 import * as moment from 'moment';
 
 export default class ScalingoClient {
@@ -15,7 +15,7 @@ export default class ScalingoClient {
     this.apiEndpoint = apiEndpoint;
   }
 
-  async _setOrUpdateBearerToken() {
+  async _setOrUpdateBearerToken(): Promise<void> {
     if (this.bearerToken && this.bearerTokenExpirationDateTime.isAfter(moment())) {
       return;
     }
@@ -47,7 +47,7 @@ export default class ScalingoClient {
     }
   }
 
-  async query(uri: string, method: Method, data?: object, headers?: object) {
+  async query(uri: string, method: Method, data?: object, headers?: object): Promise<AxiosResponse> {
 
     await this._setOrUpdateBearerToken();
 

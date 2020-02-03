@@ -2,7 +2,7 @@ import Service from './Service';
 
 export default class AppsService extends Service {
 
-  async createApplication(appName: string, appGitSource?: string, appStackId?: string, dryRun: boolean = false) {
+  async createApplication(appName: string, appGitSource?: string, appStackId?: string, dryRun: boolean = false): Promise<any> {
     const uri = 'apps';
     const data = {
       app: {
@@ -18,13 +18,13 @@ export default class AppsService extends Service {
     return response.data;
   }
 
-  async listApplications() {
+  async listApplications(): Promise<any> {
     const uri = 'apps';
     const response = await this.client.query(uri, 'get');
     return response.data;
   }
 
-  async getApplication(app: string) {
+  async getApplication(app: string): Promise<any> {
     const uri = `apps/${app}`;
     const response = await this.client.query(uri, 'get');
     return response.data;
@@ -36,7 +36,7 @@ export default class AppsService extends Service {
     return response.data;
   }
 
-  async restartApplication(app: string, scope?: string[]) {
+  async restartApplication(app: string, scope?: string[]): Promise<any> {
     const uri = `apps/${app}/restart`;
     const data = {scope};
     const response = await this.client.query(uri, 'post', data);

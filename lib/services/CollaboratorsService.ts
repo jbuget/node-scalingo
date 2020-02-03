@@ -1,15 +1,14 @@
-import ScalingoClient from '../ScalingoClient';
 import Service from './Service';
 
 export default class CollaboratorsService  extends Service {
 
-  async listAppCollaborators(app: string) {
+  async listAppCollaborators(app: string): Promise<any> {
     const uri = `apps/${app}/collaborators`;
     const response = await this.client.query(uri, 'get');
     return response.data;
   }
 
-  async inviteAppCollaborator(app: string, collaboratorEmail: string) {
+  async inviteAppCollaborator(app: string, collaboratorEmail: string): Promise<any> {
     const uri = `apps/${app}/collaborators`;
     const data = {
       collaborator: {
@@ -20,7 +19,7 @@ export default class CollaboratorsService  extends Service {
     return response.data;
   }
 
-  async deleteAppCollaborator(app: string, collaboratorId: string) {
+  async deleteAppCollaborator(app: string, collaboratorId: string): Promise<void> {
     const uri = `apps/${app}/collaborators/${collaboratorId}`;
     const response = await this.client.query(uri, 'delete');
     return response.data;
