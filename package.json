@@ -37,7 +37,6 @@
     "clean:dependencies": "rm -rf node_modules",
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "postinstall": "npm run build",
     "test": "jest",
     "preversion": "npm test",
     "postversion": "git push && git push --tags",
