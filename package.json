@@ -1,6 +1,6 @@
 {
   "name": "node-scalingo",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Node client for Scalingo API",
   "keywords": [
     "Scalingo",
