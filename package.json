@@ -1,5 +1,5 @@
 {
-  "name": "scalingo",
+  "name": "node-scalingo",
   "version": "0.0.1",
   "description": "Node client for Scalingo API",
   "keywords": [
@@ -12,10 +12,14 @@
     "url": "https://github.com/jbuget/node-scalingo/issues"
   },
   "homepage": "https://github.com/jbuget/node-scalingo#readme",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jbuget/node-scalingo.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@types/jest": "^25.1.1",
@@ -28,13 +32,23 @@
     "typescript": "^3.7.5"
   },
   "scripts": {
+    "clean": "npm run clean:dependencies && npm run clean:dist",
+    "clean:dist": "rm -rf dist",
+    "clean:dependencies": "rm -rf node_modules",
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "test": "jest"
+    "postinstall": "npm run build",
+    "test": "jest",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags",
+    "prepublishOnly": "npm run build && npm test",
+    "release": "npm run release:minor",
+    "release:major": "npm version major && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:patch": "npm version patch && npm publish"
   },
   "dependencies": {
     "@types/moment": "^2.13.0",
-    "moment": "^2.24.0",
-    "nock": "^11.7.2"
+    "moment": "^2.24.0"
   }
 }

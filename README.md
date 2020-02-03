@@ -58,8 +58,7 @@ npm test
 ### Publishing
 
 ```
-npm version patch
-npm publish
+npm run release
 ```
 
 ## License

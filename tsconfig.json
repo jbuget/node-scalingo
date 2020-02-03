@@ -1,19 +1,20 @@
 {
   "compilerOptions": {
+    "declaration": true,
     "module": "commonjs",
     "noImplicitAny": true,
-    "removeComments": true,
+    "outDir": "dist",
     "preserveConstEnums": true,
-    "outDir": "./dist",
-    "sourceMap": true
+    "removeComments": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictPropertyInitialization": false
   },
   "include": [
     "lib/**/*"
   ],
   "exclude": [
     "node_modules",
-    "test",
-    "**/*.spec.ts",
-    "**/*.test.ts"
+    "dist"
   ]
 }

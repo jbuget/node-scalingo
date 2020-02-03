@@ -108,3 +108,8 @@ dist
 # Example files
 **/example.ts
 **/example.js*
+
+# IDE files
+*.iml
+*.idea
+*.history
