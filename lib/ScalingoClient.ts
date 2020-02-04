@@ -1,5 +1,5 @@
 import axios, {AxiosInstance, AxiosResponse, Method} from 'axios';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export default class ScalingoClient {
 
