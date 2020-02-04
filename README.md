@@ -4,7 +4,7 @@ This library is an out-of-the-box HTTP client for the [Scalingo](https://scaling
 
 You can find the detailed Scalingo API specifications on [the official API documentation website](https://developers.scalingo.com/).
 
-## Usage
+## Getting started
 
 **1/** Get the following information from Scalingo:
 - **api_token**: from [your account](https://my.scalingo.com/profile) or the Scalingo CLI, generate or get your Scalingo API token
@@ -21,23 +21,34 @@ npm install node-scalingo --save
 **3/** In your code, define a new `ScalingoApi` object. Then use the services you need.
 
 ```javascript
-const { ScalingoApi } = require('../dist');
+const { ScalingoApi } = require('node-scalingo');
 
 const API_TOKEN = '<your_api_token>'; // Enter your own API token
 const API_ENDPOINT = 'https://api.osc-fr1.scalingo.com/v1';  // ex: for Outscale region
 
 const scalingoApi = new ScalingoApi(API_TOKEN, API_ENDPOINT);
 
-async function main() {
-  await scalingoApi.apps.listApplications().then(console.log);
-  await scalingoApi.env.listEnvironmentVariables('<scalingo_app>').then(console.log);
-  await scalingoApi.collaborators.inviteAppCollaborator('<scalingo_app>', '<collaborator_id>')
-}
-
-main();
+scalingoApi.apps.listApplications().then(console.log);
 ```
 
-> **Notice: this library is under construction.** If you miss a service, you can still use `ScalingoClient.query(uri, method, data, headers)` according to the [Scalingo developers documentation](https://developers.scalingo.com/).
+## Usage
+
+It is recommended to consume services through `ScalingoApi`.
+
+If you miss a service - this library is still in construction (feb. 2020) -, you can still use `ScalingoClient` and the `query()` method, according to the [Scalingo developers documentation](https://developers.scalingo.com/).
+
+The following example do the same as previously, but with `ScalingoClient` instead of `ScalingoApi`.
+
+```javascript
+const { ScalingoClient } = require('node-scalingo');
+
+const API_TOKEN = '<your_api_token>'; // Enter your own API token
+const API_ENDPOINT = 'https://api.osc-fr1.scalingo.com/v1';  // ex: for Outscale region
+
+const scalingoClient = new ScalingoClient(API_TOKEN, API_ENDPOINT);
+
+scalingoClient.query('apps', 'get').then((response) => console.log(response.data));
+```
 
 ## Documentation
 

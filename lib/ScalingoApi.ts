@@ -3,7 +3,7 @@ import VariablesService from './services/VariablesService';
 import AppsService from './services/AppsService';
 import CollaboratorsService from './services/CollaboratorsService';
 
-export class ScalingoApi {
+export default class ScalingoApi {
 
   private readonly client: ScalingoClient;
   public readonly apps: AppsService;
