@@ -54,24 +54,6 @@ scalingoClient.query('apps', 'get').then((response) => console.log(response.data
 
 Please refer to the [Scalingo API guides](https://developers.scalingo.com/) for help using `node-scalingo`.
 
-## Contributing
-
-### Installation
-
-```
-git clone git@github.com:jbuget/node-scalingo.git
-cd node-scalingo
-npm install
-npm run build
-npm test
-```
-
-### Publishing
-
-```
-npm run release
-```
-
 ## License
 
 This project is licensed under the [AGPL-3.0 License](https://github.com/jbuget/node-scalingo/blob/master/LICENSE).
