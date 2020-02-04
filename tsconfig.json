@@ -3,6 +3,7 @@
     "declaration": true,
     "esModuleInterop": true,
     "module": "commonjs",
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "outDir": "dist",
     "preserveConstEnums": true,
