@@ -21,12 +21,12 @@ npm install node-scalingo --save
 **3/** In your code, define a new `ScalingoApi` object. Then use the services you need.
 
 ```javascript
-import { ScalingoApi } from 'node-scalingo';
+const { ScalingoApi } = require('../dist');
 
-const apiToken = '<api_token>';
-const apiEndpoint = '<api_endpoint>'; // ex: for Outscale region
+const API_TOKEN = '<your_api_token>'; // Enter your own API token
+const API_ENDPOINT = 'https://api.osc-fr1.scalingo.com/v1';  // ex: for Outscale region
 
-const scalingoApi = new ScalingoApi(apiToken, apiEndpoint);
+const scalingoApi = new ScalingoApi(API_TOKEN, API_ENDPOINT);
 
 async function main() {
   await scalingoApi.apps.listApplications().then(console.log);
