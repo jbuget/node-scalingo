@@ -1,5 +1,7 @@
 # node-scalingo
 
+> 🚨 **This repository is no more developed, nor maintained.** When I started it, I did not see [the official Scalingo Node.js client](https://github.com/scalingo/scalingo.js). I recommand to use it instead of this one. 
+
 This library is an out-of-the-box HTTP client for the [Scalingo](https://scalingo.com/) API in Node.js.
 
 You can find the detailed Scalingo API specifications on [the official API documentation website](https://developers.scalingo.com/).
@@ -35,7 +37,7 @@ scalingoApi.apps.listApplications().then(console.log);
 
 It is recommended to consume services through `ScalingoApi`.
 
-If you miss a service - this library is still in construction (feb. 2020) -, you can still use `ScalingoClient` and the `query()` method, according to the [Scalingo developers documentation](https://developers.scalingo.com/).
+If you miss a service, you can still use `ScalingoClient` and the `query()` method, according to the [Scalingo developers documentation](https://developers.scalingo.com/).
 
 The following example do the same as previously, but with `ScalingoClient` instead of `ScalingoApi`.
 
